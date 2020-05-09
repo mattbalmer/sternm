@@ -1,0 +1,1 @@
+export const slugify = (type) => type.toLowerCase().replace(/(_|\s)+/g, '-');

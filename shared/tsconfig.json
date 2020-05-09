@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "sourceMap": true,
+        "noImplicitAny": false,
+        "skipLibCheck": true,
+        "target": "es6",
+        "module": "commonjs",
+        "baseUrl": "./",
+        "moduleResolution": "node",
+        "lib": ["es2018", "dom"],
+        "paths": {
+            "@env/*": ["./@env/*"],
+            "@shared/*": ["./@shared/*"]
+        }
+    },
+    "include": [
+        "./**/*"
+    ]
+}

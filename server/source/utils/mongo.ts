@@ -1,0 +1,1 @@
+export const areMatchingIDs = (a, b) => a.toString() === b.toString();

@@ -1,0 +1,1 @@
+ENV=$1 NODE_PATH=./source ts-node -r tsconfig-paths/register ./source/run.ts
