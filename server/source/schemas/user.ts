@@ -41,10 +41,10 @@ const UserSchema = new mongoose.Schema({
   roles: [{
     type: String,
     enum: [
-      UserRole.MEMBER,
+      UserRole.USER,
       UserRole.ADMIN,
     ],
-    default: UserRole.MEMBER,
+    default: UserRole.USER,
   }],
 
   purchases: [{
@@ -123,7 +123,7 @@ UserSchema.statics.findOrCreate = async function(profile) {
         updated: new Date().getTime(),
         lastLoggedIn: new Date().getTime(),
       },
-      roles: [UserRole.MEMBER],
+      roles: [UserRole.USER],
     });
 
     return await user.save();

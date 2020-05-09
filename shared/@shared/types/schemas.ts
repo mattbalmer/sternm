@@ -1,7 +1,7 @@
 export type UserID = string;
 
 export enum UserRole {
-  MEMBER = 'MEMBER',
+  USER = 'USER',
   ADMIN = 'ADMIN',
 }
 
@@ -24,3 +24,20 @@ export type User = {
     email?: string,
   },
 }
+
+export type Lobby = {
+  _id: string,
+  title: string,
+  owner: UserID,
+  users: UserID[],
+  chat: {
+    message: string,
+    timestamp: Date,
+    sender: UserID,
+  }[],
+  dates: {
+    created: Date,
+    started: Date,
+    finished: Date,
+  },
+};

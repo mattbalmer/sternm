@@ -4,13 +4,14 @@ import { containerize } from '@client/utils/react';
 import { AppContainer } from '@client/components/containers/AppContainer';
 import { UserActions } from '@client/actions/UserActions';
 import { LandingPageSignedOut } from '@client/components/pages/LandingPageSignedOut';
-import { LandingPageSignedIn } from '@client/components/pages/LandingPageSignedIn';
 import { AdminPage } from '@client/components/pages/AdminPage';
+import { LobbiesPage } from '@client/components/pages/LobbiesPage';
+import { LobbyPage } from '@client/components/pages/LobbyPage';
 
 const HomePageWrapperComponent = containerize(class HomePageWrapperComponent extends React.Component<any, any> {
   render() {
     return this.props.isLoggedIn
-      ? <LandingPageSignedIn />
+      ? <LobbiesPage />
       : <LandingPageSignedOut />
   }
 }, (state) => ({
@@ -24,6 +25,8 @@ export const AppComponent = containerize(class AppComponent extends React.Compon
         <AppContainer>
           <Route exact path='/' component={HomePageWrapperComponent} />
           <Route exact path='/admin' component={AdminPage} />
+          <Route exact path='/lobbies' component={LobbiesPage} />
+          <Route exact path='/lobbies/:lobbyId' component={LobbyPage} />
         </AppContainer>
       </Router>
     );
